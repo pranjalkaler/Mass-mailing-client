@@ -15,18 +15,25 @@ server.login(CN.EMAIL, CN.PASSWORD)
 # server.set_debuglevel(2)
 pdf = ut.read_pdf(CN.PATH_TO_PDF)
 
+counter = 1
+
 for email in valid_emails:
+    counter = counter + 1
     toaddr = email
     Message = ut.create_message(toaddr)
-    Message.attach(pdf)
+    Message.attach(cv)
+    Message.attach(portfolio)
 
-    print("Sending email to {}".format(toaddr))
+    print("{} Sending email to {}".format(counter, toaddr))
     try:
+        time.sleep(30)
         server.sendmail(fromaddr, toaddr, Message.as_string())
     except KeyboardInterrupt:
         break
-    except:
+    except Exception as e:
         print("Failed to send email to {}".format(email))
+        print("Exception: {}".format(e))
+        break
 server.quit()
 
 print("Emails not sent to:")
