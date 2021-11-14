@@ -1,6 +1,7 @@
 from constants import Constants as CN
 from utils import Utils as ut
 import smtplib as spd
+import time
 
 
 emails = ut.read_emails()
@@ -13,8 +14,8 @@ server.starttls()
 server.ehlo()
 server.login(CN.EMAIL, CN.PASSWORD)
 # server.set_debuglevel(2)
-pdf = ut.read_pdf(CN.PATH_TO_PDF)
-
+cv = ut.read_pdf(CN.PATH_TO_CV)
+portfolio = ut.read_pdf(CN.PATH_TO_PORTFOLIO)
 counter = 1
 
 for email in valid_emails:
