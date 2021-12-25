@@ -11,7 +11,7 @@ class Constants:
 
     #Sender email
     EMAIL = "muskaan.rampal.spad.delhi@gmail.com"
-    PASSWORD = "QWEasd123@"
+    PASSWORD = "**************"
     PATH_TO_CV = "CV_Muskaan.pdf"
     PATH_TO_PORTFOLIO = "PORTFOLIO_MuskaanRampal.pdf"
     SUBJECT = "Application For Internship (January 2022- June 2022)"
